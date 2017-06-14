@@ -89,6 +89,21 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving details of ad.", e);
         }
     }
+
+    @Override
+    public List<Ad> getAdsByTerm(String search) {
+        try {
+            String searchQuery = "SELECT * FROM ads WHERE title LIKE ? OR description LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(searchQuery);
+            stmt.setString(1, "%" + search + "%");
+            stmt.setString(2, "%" + search + "%");
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving ads.", e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),

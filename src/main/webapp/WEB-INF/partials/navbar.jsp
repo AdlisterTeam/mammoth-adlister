@@ -5,6 +5,18 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
+        <!-- Search Bar-->
+        <div class="col-md-4 col-md-offset-3">
+            <form action="/search" method="get">
+                <input name="search" id="search" class="searchBar form-control" type="text">
+                <input type="submit">
+            </form>
+        </div>
+
+        <!-- Search icon -->
+        <i class="fa fa-search fa-2x col-md-2 navbar-brand" aria-hidden="true"></i>
+
+
         <ul class="nav navbar-nav navbar-right">
             <%--<li><a href="/login">Login</a></li>--%>
             <%--<li><a href="/logout">Logout</a></li>--%>
