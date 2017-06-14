@@ -1,7 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
-//import com.mysql.cj.mysqlx.protobuf.MysqlxExpr;
+import com.codeup.adlister.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +29,18 @@ public class ListAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad>usersAds(long userId) {
+    public List<Ad> allByUser(User user) {
         return null;
     }
 
     @Override
-    public Object search(String searchBar) {
+    public String getEmail(Ad ad) {
+        return null;
+    }
+
+
+    @Override
+    public Ad getAdById(int idToFind) {
         return null;
     }
 

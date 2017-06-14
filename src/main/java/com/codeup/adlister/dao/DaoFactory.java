@@ -1,6 +1,5 @@
 package com.codeup.adlister.dao;
 
-//import com.codeup.adlister.controllers.Config;
 
 import com.codeup.adlister.util.Config;
 

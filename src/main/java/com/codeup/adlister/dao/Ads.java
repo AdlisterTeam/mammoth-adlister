@@ -1,8 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
-import com.mysql.cj.mysqlx.protobuf.MysqlxDatatypes;
-import com.mysql.cj.mysqlx.protobuf.MysqlxExpr;
+import com.codeup.adlister.models.User;
 
 import java.util.List;
 
@@ -11,8 +10,7 @@ public interface Ads {
     List<Ad> all();
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
-
-    List<Ad> usersAds(long userId);
-
-    Object search (String searchBar);
+    List<Ad> allByUser(User user);
+    String getEmail(Ad ad);
+    Ad getAdById(int idToFind);
 }
