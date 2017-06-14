@@ -12,7 +12,13 @@ import java.io.IOException;
 @WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        if (request.getParameter("search") ==null) {
+
+            request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        } else {
+            String searchBar = request.getParameter("search");
+            request.setAttribute("ads", DaoFactory.getAdsDao().search(searchBar));
+        }
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
     }
 }
