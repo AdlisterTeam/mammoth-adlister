@@ -17,6 +17,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <h2>${sessionScope.ad.getTitle()}</h2>
 <p>${sessionScope.ad.getDescription()}</p>
-<p>${sessionScope.ad.getuserId}</p>
+<p>${sessionScope.user.username}</p>
+<p>${sessionScope.user.email}</p>
 </body>
 </html>
