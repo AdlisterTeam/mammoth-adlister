@@ -81,8 +81,8 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Ad getAdById(int idToFind) {
         try {
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM ads WHERE ID = " + idToFind);
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM ads WHERE ID = " + idToFind);
             rs.next();
             return extractAd(rs);
         } catch (SQLException e) {
