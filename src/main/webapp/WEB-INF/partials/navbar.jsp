@@ -1,4 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<style>
+    .speech {border: 1px solid #DDD; width: 300px; padding: 0; margin: 0}
+    .speech input {border: 0; width: 240px; display: inline-block; height: 30px;}
+    .speech img {float: right; width: 40px }
+</style>
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -7,9 +13,11 @@
         </div>
         <!-- Search Bar-->
         <div class="col-md-4 col-md-offset-3">
-            <form action="/search" method="get">
-                <input name="search" id="search" class="searchBar form-control" type="text">
-                <input type="submit">
+            <form id="labnol" method="get" action="/search">
+                <div class="speech">
+                    <input type="text" name="q" id="transcript" placeholder="Speak" />
+                    <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
+                </div>
             </form>
         </div>
 
@@ -34,3 +42,31 @@
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+
+<script>
+    function startDictation() {
+
+        if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+            var recognition = new webkitSpeechRecognition();
+
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            recognition.lang = "en-US";
+            recognition.start();
+
+            recognition.onresult = function(e) {
+                document.getElementById('transcript').value
+                    = e.results[0][0].transcript;
+                recognition.stop();
+                document.getElementById('labnol').submit();
+            };
+
+            recognition.onerror = function(e) {
+                recognition.stop();
+            }
+
+        }
+    }
+</script>
