@@ -19,6 +19,7 @@ public class SearchAdsServlet extends HttpServlet {
         String search = request.getParameter("q");
         request.setAttribute("ads", DaoFactory.getAdsDao().getAdsByTerm(search));
         request.setAttribute("AdsDao", DaoFactory.getAdsDao());
+        request.setAttribute("search", search);
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
     }
 }
