@@ -104,6 +104,19 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public void updateAd(Ad ad, String title, String description) {
+        try {
+            String updateQuery = "UPDATE ads SET title = ?, description = ? WHERE id = " + ad.getId();
+            PreparedStatement stmt = connection.prepareStatement(updateQuery);
+            stmt.setString(1, title);
+            stmt.setString(2, description);
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating ad.", e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
