@@ -20,7 +20,7 @@
 <p>${sessionScope.user.username}</p>
 <p>${sessionScope.user.email}</p>
 <c:if test="${sessionScope.user.getId() == sessionScope.ad.getUserId()}">
-p><a href="/ads/edit?id=${ad.getId()}">Edit ad</a></p>
+<p><a href="/ads/edit?id=${ad.getId()}">Edit ad</a></p>
 
 </c:if>
 </body>

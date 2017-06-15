@@ -11,8 +11,8 @@
 
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
-        <a href="/user/delete">Delete Profile</a>
-    <
+        <a href="/user/delete">Delete Profile </a>
+
     <h1>Here are all your ads</h1>
 
     <c:forEach var="ad" items="${ads}">
