@@ -15,7 +15,7 @@
         <div class="col-md-4 col-md-offset-3">
             <form id="labnol" method="get" action="/search">
                 <div class="speech">
-                    <input type="text" name="q" id="transcript" placeholder="Speak" />
+                    <input type="text" name="q" id="transcript" placeholder="Speak" value="${search}"/>
                     <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
                 </div>
             </form>
@@ -53,7 +53,7 @@
             recognition.continuous = false;
             recognition.interimResults = false;
 
-            recognition.lang = "en-US";
+            recognition.lang = "en-US","es-US";
             recognition.start();
 
             recognition.onresult = function(e) {
