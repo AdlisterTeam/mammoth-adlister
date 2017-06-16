@@ -18,13 +18,17 @@
 <div class="container">
     <h2>${sessionScope.ad.getTitle()}</h2>
     <p>${sessionScope.ad.getDescription()}</p>
+    <p>Categories: <br>
+        <c:forEach var="category"
+                   items="${sessionScope.categories}">
+            <a href="/categories?=${category}">${category}</a><br>
+        </c:forEach>
+    </p>
     <p>${sessionScope.user.username}</p>
     <p>${sessionScope.user.email}</p>
+    <p>${sessionScope.ad.location}</p>
     <c:if test="${sessionScope.user.getId() == sessionScope.ad.getUserId()}">
         <p><a href="/ads/edit?id=${ad.getId()}" class="btn btn-danger">Edit ad</a></p>
-        <%--<form method="get" action="/ads/edit?id=${ad.id}">
-            <button id="edit-ad" class="btn btn-danger">Edit Ad</button>
-        </form>--%>
         <form action="/ads/delete" method="POST">
             <input type="hidden" name="id" value="${ad.id}"/>
             <button id="delete-ad" class="btn btn-danger">Delete</button>
