@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by frenchfryes on 6/16/17.
  */
-@WebServlet(name = "CategoryServlet", urlPatterns = "/category")
+@WebServlet(name = "CategoryServlet", urlPatterns = "/categories")
 public class CategoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String category = request.getParameter("category");

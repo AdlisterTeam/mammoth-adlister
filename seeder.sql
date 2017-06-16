@@ -2,7 +2,7 @@ USE adlister_db;
 
 INSERT INTO users (username, email, password) VALUES ("freddy", "fred@test.com", "$2a$12$GtFLXHMHT0IgZLOPcbddAOyJeiBrdm24e.Lo/bfO6cl1rMZUghFcK");
 
-INSERT INTO ads (user_id, title, description, location) VALUES (1, "Tiesto Tickets", "I have 2 tickets to Tiesto on Saturday Night", "Las Vegas");
+INSERT INTO ads (user_id, title, description, location) VALUES (1, "Tiesto Tickets", "I have 2 tickets to Tiesto on Saturday Night", "Las Vegas, Nevada");
 
 INSERT INTO categories (id, category) VALUES (1, "Alternative"),
   (2, "Blues"),
