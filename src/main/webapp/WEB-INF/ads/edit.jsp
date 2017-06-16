@@ -18,6 +18,13 @@
             <textarea id="description" name="description" class="form-control"
                       type="text">${ad.getDescription()}</textarea>
         </div>
+        <input type="hidden" name="country" id="countryId" value="US"/>
+        <select name="state" class="states order-alpha" id="stateId">
+            <option value="">Select State</option>
+        </select>
+        <select name="city" class="cities order-alpha" id="cityId">
+            <option value="">Select City</option>
+        </select>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>
