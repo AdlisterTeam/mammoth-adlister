@@ -18,7 +18,7 @@
 <div class="container">
     <h2>${sessionScope.ad.getTitle()}</h2>
     <p>${sessionScope.ad.getDescription()}</p>
-    <p>Categories: <br>
+    <p>Type of Music: <br>
         <c:forEach var="category"
                    items="${sessionScope.categories}">
             <a href="/categories?=${category}">${category}</a><br>

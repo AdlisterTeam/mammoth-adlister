@@ -15,7 +15,7 @@
         <div class="col-md-4 col-md-offset-3">
             <form id="labnol" method="get" action="/search">
                 <div class="speech">
-                    <input type="text" name="q" id="transcript" placeholder="Speak" value="${search}"/>
+                    <input type="text" name="q" id="transcript" placeholder="Type or Speak for Search" value="${search}"/>
                     <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
                 </div>
             </form>
