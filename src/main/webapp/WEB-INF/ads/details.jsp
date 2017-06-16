@@ -21,7 +21,7 @@
     <p>Categories: <br>
         <c:forEach var="category"
                    items="${sessionScope.categories}">
-            <a href="/categories?=${category}">${category}</a><br>
+            <a href="/categories?category=${category}">${category}</a><br>
         </c:forEach>
     </p>
     <p>${sessionScope.user.username}</p>

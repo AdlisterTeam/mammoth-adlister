@@ -26,7 +26,7 @@
         <select name="city" class="cities order-alpha" id="cityId">
             <option value="">Select City</option>
         </select>
-        <br>
+        <br><br>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>

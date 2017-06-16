@@ -135,12 +135,12 @@ public class MySQLAdsDao implements Ads {
         try {
             String searchQuery = "SELECT * FROM ads AS a " +
                     "JOIN ads_categories AS ac " +
-                    "ON a.id = ac.ad_id " +
+                    "ON a.id = ac.ads_id " +
                     "JOIN categories AS c " +
                     "ON ac.category_id = c.id " +
-                    "WHERE c.category = ?";
+                    "WHERE c.category LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(searchQuery);
-            stmt.setString(1, category);
+            stmt.setString(1, "%" + category + "%");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
