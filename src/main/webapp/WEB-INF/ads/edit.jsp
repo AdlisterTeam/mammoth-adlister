@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Edit Ad" />
     </jsp:include>
@@ -25,8 +26,10 @@
         <select name="city" class="cities order-alpha" id="cityId">
             <option value="">Select City</option>
         </select>
+        <<br>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>
 </body>
+<script src="//geodata.solutions/includes/statecity.js"></script>
 </html>
